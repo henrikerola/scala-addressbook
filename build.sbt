@@ -1,4 +1,4 @@
-name := "scaladocumentmanager"
+name := "scala-addressbook"
  
 scalaVersion := "2.9.1"
  
