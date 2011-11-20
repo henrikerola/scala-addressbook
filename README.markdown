@@ -2,7 +2,7 @@ A version of Vaadin AddressBook created with Scala & [scala-wrappers](http://vaa
 
 ### How to run the application?
 
-Install [https://github.com/harrah/xsbt/wiki](sbt 0.11) and run the following command:
+Install [sbt 0.11](https://github.com/harrah/xsbt/wiki) and run the following command:
 
     $ sbt ~container:start
 
