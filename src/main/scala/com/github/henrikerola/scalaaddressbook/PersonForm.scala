@@ -24,7 +24,7 @@ class PersonForm(dataSource: PersonContainer) extends Form {
 
     addItem("");
     for (person <- dataSource.getItemIds) {
-      addItem(person.getCity())
+      addItem(person.city)
     }
   }
 
@@ -45,8 +45,6 @@ class PersonForm(dataSource: PersonContainer) extends Form {
         case "postalCode" =>
           val tf = super.createField(item, propertyId, uiContext).asInstanceOf[TextField]
           tf.setNullRepresentation("");
-          tf.addValidator(new RegexpValidator("[1-9][0-9]{4}", "Postal code must be a five digit number and cannot start with a zero."));
-          tf.setRequired(true);
           tf.addValidator(new RegexpValidator("[1-9][0-9]{4}", "Postal code must be a five digit number and cannot start with a zero."));
           tf.setRequired(true);
           tf

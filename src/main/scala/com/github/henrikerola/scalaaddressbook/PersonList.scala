@@ -9,17 +9,17 @@ class PersonList(dataSource: PersonContainer, action: com.vaadin.data.Property.V
   extends Table(width = 100 pct, height = 100 pct, dataSource = dataSource) {
   addListener(action)
 
-  setVisibleColumns(PersonContainer.NATURAL_COL_ORDER);
-  setColumnHeaders(PersonContainer.COL_HEADERS_ENGLISH);
+  setVisibleColumns(PersonContainer.NATURAL_COL_ORDER)
+  setColumnHeaders(PersonContainer.COL_HEADERS_ENGLISH)
 
-  setColumnCollapsingAllowed(true);
-  setColumnReorderingAllowed(true);
+  setColumnCollapsingAllowed(true)
+  setColumnReorderingAllowed(true)
 
-  setSelectable(true);
-  setImmediate(true);
-  setNullSelectionAllowed(false);
+  setSelectable(true)
+  setImmediate(true)
+  setNullSelectionAllowed(false)
 
   addGeneratedColumn("email", (table, itemID, propertyId) => itemID match {
-    case p: Person => new Link(p.getEmail(), new ExternalResource("mailto:" + p.getEmail()))
-  });
+    case p: Person => new Link(p.email, new ExternalResource("mailto:" + p.email))
+  })
 }
