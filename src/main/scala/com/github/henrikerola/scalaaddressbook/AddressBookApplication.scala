@@ -105,13 +105,13 @@ class AddressBookApplication extends Application {
 
   def search(searchFilter: SearchFilter) {
     dataSource.removeAllContainerFilters();
-    dataSource.addContainerFilter(searchFilter.getPropertyId(),
-      searchFilter.getTerm(), true, false);
+    dataSource.addContainerFilter(searchFilter.propertyId,
+      searchFilter.term, true, false);
     showListView();
 
     getMainWindow.showNotification(
-      "Searched for " + searchFilter.getPropertyId() + "=*"
-        + searchFilter.getTerm() + "*, found "
+      "Searched for " + searchFilter.propertyId + "=*"
+        + searchFilter.term + "*, found "
         + dataSource.size + " item(s).",
       Notification.TYPE_TRAY_NOTIFICATION);
   }
